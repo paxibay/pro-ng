@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myData = {
+            name: "Adam",
+            weather: "sunny"
+        };
+
+        myData.dayOfWeek = "Monday";
+        myData["dayOfWeek"] = "Sunday";
+        myData.SayHello = function () {
+            console.write("Hello");
+        }
+    </script>
+</head>
+<body>
+    <p>
+        In this listing, I have added a new property to the object called dayOfWeek. I have used dot notation
+        (concatenating the object and property names with a period), but I could as readily have used the <strong>index-style notation</strong>. 
+        As you might expect by now, you can also add new methods to an object by setting the value of a property to be a function
+    </p>
+</body>
+</html>

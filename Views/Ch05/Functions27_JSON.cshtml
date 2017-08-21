@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html ng-app="demo">
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular.module("demo", []);
+
+        myApp.controller("demoCtrl", function ($scope, $http) {
+            $http.get("todo.json").success(function (data) {
+                var jsonString = angular.toJson(data);
+                console.log(jsonString);
+                $scope.todos = angular.fromJson(jsonString);
+            });
+        });
+    </script>
+</head>
+<body ng-controller="demoCtrl">
+    <div class="panel">
+        <h1>To Do</h1>
+        <table class="table">
+            <tr><td>Action</td><td>Done</td></tr>
+            <tr ng-repeat="item in todos">
+                <td>{{item.action}}</td>
+                <td>{{item.done}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <p>
+        The JSON data looks similar to the literal formats used to declare arrays and objects in JavaScript. The only
+        difference is that the property names of the objects are enclosed in quotes.
+    </p>
+    <p>
+        AngularJS makes working with JSON simple. When you request JSON data via Ajax, the response will be parsed
+        automatically into JavaScript objects and passed to the success function, as demonstrated in the previous example
+        when I used the $http.get method to get a JSON file from the web server.
+    </p>
+    <p>
+        AngularJS supplements this with two methods that explicitly encode and decode JSON: angular.fromJson and
+        angular.toJson.
+    </p>
+    <p>
+        In this example, I operate on the data object that is passed to the promise success function. This was received as
+        JSON data from the web server and automatically parsed into a JavaScript array by AngularJS. I then call the
+        angular.toJson method to encode the array as JSON again and write it to the console. Finally, I take the JSON that I
+        have created and call the angular.fromJson method to create another JavaScript object, which I use to populate the
+        data model in the AngularJS controller and populate the table element via the ng-repeat directive.
+    </p>
+    <p>
+        Tip Many of the most common AngularJS features that need JSON data will encode and decode data automatically,
+        so you won’t often need to use these methods.
+    </p>
+</body>
+</html>

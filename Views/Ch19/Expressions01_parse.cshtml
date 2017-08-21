@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Expressions</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script>
+        angular.module("exampleApp", [])
+            .controller("defaultCtrl", function ($scope) {
+                $scope.price = "100.23";
+            })
+            .directive("evalExpression", function ($parse) {
+                return function (scope, element, attrs) {
+                    scope.$watch(attrs["evalExpression"], function (newValue) {
+                        try {
+                            var expressionFn = $parse(scope.expr);
+                            var result = expressionFn(scope); // or var result = expressionFn();
+                            if (result == undefined) {
+                                result = "No result";
+                            }
+                        } catch (err) {
+                            result = "Cannot evaluate expression";
+                        }
+                        element.text(result);
+                    });
+                }
+            });
+    </script>
+</head>
+<body ng-controller="defaultCtrl">
+    <div>enter price | currency into input element</div>
+    <div class="well">
+        <p>
+            <input class="form-control" ng-model="expr" />
+        </p>
+        <div>
+            Result: <span eval-expression="expr"></span>
+        </div>
+    </div>
+</body>
+</html>

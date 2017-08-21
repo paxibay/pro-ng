@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AngularJs Service, Factory and Providers</title>
+    <script src="~/Scripts/angular.js"></script>
+</head>
+<body>
+    <div class="container" style="padding-top: inherit;">   
+        <div ng-app="myApp" ng-controller="myController">
+            <p>From Serice: {{serviceName}}</p>
+            <p>From Factory: {{factoryName}}</p>
+            <p>From Provider: {{providerName}}</p>
+        </div> 
+    </div>
+    <script>
+        //defining module
+        var app = angular.module('myApp', []);
+
+        //defining service
+        app.service('myService', function() {
+            this.name = '';
+            this.setName = function(newName) {
+                this.name = newName;
+                return this.name;
+            }
+        });
+
+        //defining factory
+        app.factory('myFactory', function() {
+            var serviceObj = {};
+            serviceObj.name = '';
+            serviceObj.setName = function(newName) {
+                serviceObj.name = newName;
+            }
+            return serviceObj;
+        });
+
+        //defining provider
+        app.provider('configurable', function() {
+            var privateName = '';
+            this.setName = function(newName) {
+                privateName = newName;
+            }
+            
+            this.$get = function() {
+                return {
+                    name: privateName
+                };
+            }
+        });
+
+        //configuration provider
+        app.config(function(configurableProvider) {
+            configurableProvider.setName("Saksham Chauhan");
+        });
+
+        //defining controller
+        app.controller('myController', function ($scope, myService, myFactory, configurable) {
+            $scope.serviceName = myService.setName("Saksham Chauhan");
+
+            myFactory.setName("Saksham Chauhan");
+            $scope.factoryName = myFactory.name;
+
+            $scope.providerName = configurable.name;
+        });
+
+    </script>
+</body>
+</html>

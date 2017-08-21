@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Directives</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script>
+        angular.module("exampleApp", [])
+        .controller("defaultCtrl", function ($scope) {
+            $scope.dataValue = false;
+        });
+    </script>
+</head>
+<body>
+    <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+        <h3 class="panel-header">Managing Boolean Attributes</h3>
+        <div class="checkbox well">
+            <label>
+                <input type="checkbox" ng-model="dataValue">
+                Set the Data Value
+            </label>
+        </div>
+        <button class="btn btn-success" ng-disabled="dataValue">My Button</button>
+    </div>
+</body>
+</html>

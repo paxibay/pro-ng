@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Components</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script>
+        angular.module("exampleApp", [])
+        .controller("defaultCtrl", function ($scope, $injector) {
+            var counter = 0;
+
+            var logClick = function ($log, $exceptionHandler, message) {
+                if (counter == 0) {
+                    $log.log(message);
+                    counter++;
+                } else {
+                    $exceptionHandler("Already clicked");
+                }
+            }
+
+            $scope.handleClick = function () {
+                var localVars = { message: "Button Clicked" };
+                $injector.invoke(logClick, null, localVars);
+            };
+        });
+    </script>
+</head>
+<body ng-controller="defaultCtrl">
+    <div class="well">
+        <button class="btn btn-primary" ng-click="handleClick()">Click Me!</button>
+    </div>
+</body>
+</html>

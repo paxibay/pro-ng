@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        //function myFunc(name, weather) {
+        //    console.log("Hello " + name + ".");
+        //    console.log("It is " + weather + " today");
+        //};
+
+        //myFunc("Adam", "sunny");
+
+        var myObject = {
+          foo: "bar",
+          func: function () {
+            var self = this;
+            console.log("outer func: this.foo = " + this.foo);
+            console.log("outer func: self.foo = " + self.foo);
+            (function () {
+              console.log("inner func: this.foo = " + this.foo);
+              console.log("inner func: self.foo = " + self.foo);
+            }());
+          }
+        };
+        myObject.func();
+    </script>
+</head>
+<body>
+    This is a simple example
+</body>
+</html>

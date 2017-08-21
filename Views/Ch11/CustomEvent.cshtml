@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Directives</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script>
+        angular.module("exampleApp", []).
+            controller("defaultCtrl", function ($scope, $location) {
+                $scope.message = "Tap Me!";
+            }).
+            directive("tap", function () {
+                return function (scope, elem, attrs) {
+                    elem.on("touchstart touchend", function () {
+                        scope.$apply(attrs["tap"]);
+                    });
+                }
+            });
+    </script>
+</head>
+<body>
+    <h3>Creating a Custom Event Directive</h3>
+    <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+        <div class="well" tap="message = 'Tapped!'">
+            {{message}}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Ajax</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script>
+        angular.module("exampleApp", [])
+        .controller("defaultCtrl", function ($scope, $http) {
+            $scope.loadData = function () {
+                $http.get("/Scripts/Ch20/productData.json").success(function (data) {
+                    $scope.products = data;
+                });
+            }
+
+            $scope.sendData = function () {
+
+                $http.post("/Scripts/Ch20/productData.json", $scope.products).then(
+                    function () { alert('success'); }
+                );
+            }
+
+            $scope.sendData_ = function () {
+                var config = {
+                    headers: {
+                        "content-type": "application/xml"
+                    },
+                    transformRequest: function (data, headers) {
+                        var rootElem = angular.element("<xml>");
+                        for (var i = 0; i < data.length; i++) {
+                            var prodElem = angular.element("<product>");
+                            prodElem.attr("name", data[i].name);
+                            prodElem.attr("category", data[i].category);
+                            prodElem.attr("price", data[i].price);
+                            rootElem.append(prodElem);
+                        }
+                        rootElem.children().wrap("<products>");
+                        var aa = rootElem.html();
+                        return rootElem.html();
+                    }
+                };
+
+                //$http.post("/Scripts/Ch20/ajax.html", $scope.products, config);
+
+                $http.post("/Scripts/Ch20/ajax.html", $scope.products, config).then(
+                    function () { alert('success'); },
+                    function (response, status) {
+                        console.log("The request failed with response " + response + " and status code " + status);
+                    }
+                );
+            }
+        });
+    </script>
+</head>
+<body ng-controller="defaultCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-striped table-bordered">
+                <thead><tr><th>Name</th><th>Category</th><th>Price</th></tr></thead>
+                <tbody>
+                    <tr ng-hide="products.length">
+                        <td colspan="3" class="text-center">No Data</td>
+                    </tr>
+                    <tr ng-repeat="item in products">
+                        <td>{{item.name}}</td>
+                        <td>{{item.category}}</td>
+                        <td>{{item.price | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <button class="btn btn-primary" ng-click="loadData()">Load Data</button>
+                <button class="btn btn-primary" ng-click="sendData()">Send Data</button>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

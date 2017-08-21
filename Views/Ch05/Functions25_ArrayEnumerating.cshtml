@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myArray = [100, "Adam", true];
+
+        for (var i = 0; i < myArray.length; i++) {
+            console.log("Index " + i + ": " + myArray[i]);
+        }
+
+        console.log("---");
+
+        for (var item in myArray) {
+            console.log(item + ": " + myArray[item]);
+        }
+
+        console.log("---");
+
+        angular.forEach(myArray, function (value, key) {
+            console.log(key + ": " + value);
+        });
+    </script>
+</head>
+<body>
+    <p>
+        You enumerate the content of an array using a for loop or the AngularJS angular.forEach method
+    </p>
+    <p>
+        The angular.forEach method doesn’t require array
+        bounds to work but doesn’t provide the index of the currently array item
+    </p>
+
+    <h4>Using the Built-in Array Methods</h4>
+    <article>
+        The JavaScript Array object defines a number of methods that you can use to work with arrays.
+    </article>
+    <img src="~/Scripts/Ch05/ArrayMethods.png" />
+</body>
+</html>

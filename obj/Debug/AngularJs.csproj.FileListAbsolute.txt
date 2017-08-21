@@ -1,0 +1,53 @@
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\CH09 The Anatomy of an AngularJS App.dll.config
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\CH09 The Anatomy of an AngularJS App.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\CH09 The Anatomy of an AngularJS App.pdb
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Antlr3.Runtime.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\EntityFramework.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\EntityFramework.SqlServer.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.AspNet.Identity.Core.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.AspNet.Identity.Owin.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Host.SystemWeb.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.Cookies.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.Facebook.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.Google.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.OAuth.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.Twitter.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Web.Infrastructure.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Newtonsoft.Json.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.Helpers.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.Mvc.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.Razor.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.WebPages.Deployment.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.WebPages.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.WebPages.Razor.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\WebGrease.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Antlr3.Runtime.pdb
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\EntityFramework.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\EntityFramework.SqlServer.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.AspNet.Identity.Core.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.AspNet.Identity.Owin.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Host.SystemWeb.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.Cookies.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.Facebook.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.Google.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.OAuth.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Owin.Security.Twitter.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Newtonsoft.Json.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.Helpers.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.Mvc.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.Razor.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.WebPages.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.WebPages.Deployment.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.WebPages.Razor.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\Microsoft.Web.Infrastructure.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\bin\System.Web.Optimization.xml
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\obj\Debug\CH09 The Anatomy of an AngularJS App.dll
+F:\Workspace\_Tfs\PaxiSource\Paxidock\src\Paxidock\PaxiAngular\obj\Debug\CH09 The Anatomy of an AngularJS App.pdb

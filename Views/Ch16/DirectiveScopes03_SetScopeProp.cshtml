@@ -1,0 +1,25 @@
+﻿<html ng-app="exampleApp">
+<head>
+    <title>Directives</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module("exampleApp", [])
+            .directive("scopeDemo", function() {
+                return {
+                    template: "<div class='panel-body'>Name: <input ng-model=name /></div>",
+                    scope: true
+                }
+            })
+            .controller("scopeCtrl", function($scope) {
+                // do nothing - no behaviours required
+            })
+    </script>
+</head>
+<body ng-controller="scopeCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body" scope-demo></div>
+        <div class="panel-body" scope-demo></div>
+    </div>
+</body>
+</html>

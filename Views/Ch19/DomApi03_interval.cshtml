@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>DOM API Services</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script>
+        angular.module("exampleApp", [])
+        .controller("intervalCtrl", function ($scope, $interval) {
+            $interval(function () {
+                $scope.time = new Date().toTimeString();
+            }, 1000);
+        })
+        .controller("timeoutCtrl", function ($scope, $timeout) {
+            $timeout(function () {
+                $scope.time = new Date().toTimeString();
+            }, 5000);
+        });
+    </script>
+</head>
+<body>
+    <div class="panel panel-default" ng-controller="intervalCtrl">
+        <h4 class="panel-heading">Time</h4>
+        <div class="panel-body">
+            The time is: {{time}}
+        </div>
+    </div>
+
+    <hr />
+
+    <div class="panel panel-default" ng-controller="timeoutCtrl">
+        <h4 class="panel-heading">Time</h4>
+        <div class="panel-body">
+            The time is: {{time}}
+        </div>
+    </div>
+</body>
+</html>
+
+

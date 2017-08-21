@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myData = {
+            name: "Adam",
+            city: null
+        };
+
+        console.log("name: " + angular.isDefined(myData.name));
+        console.log("city: " + angular.isDefined(myData.city));
+        console.log("country: " + angular.isDefined(myData.country));
+    </script>
+</head>
+<body>
+    <p>
+        You can also use the AngularJS angular.isDefined and angular.isUndefined methods
+    </p>
+    <p>
+        These methods check only whether a value has been defined, not whether it is null, and this can be useful for
+        differentiating between null and undefined values. In the listing I have used the angular.isDefined method to check
+        a property that has been defined and assigned a value, a property that has been defined but is null, and an undefined
+        value
+    </p>
+</body>
+</html>

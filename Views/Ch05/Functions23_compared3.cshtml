@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myData1 = 5;
+        var myData2 = "5";
+        var myData3 = myData2;
+
+        var test1 = angular.equals(myData1, myData2);
+        var test2 = angular.equals(myData2, myData3);
+
+        console.log("Test 1: " + test1 + " Test 2: " + test2);
+    </script>
+</head>
+<body>
+    This is a simple example
+    <p> AngularJS extends the built-in comparison support with the angular.equals method, 
+        which takes two objects	or values as its arguments and will return true if they pass 
+        the identity comparison (===) or if both arguments are
+	    objects and all of their properties pass the identity comparison.
+    </p>
+</body>
+</html>

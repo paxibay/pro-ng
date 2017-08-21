@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myData = {
+            name: "Adam",
+            city: null
+        };
+
+        if (!myData.name) {
+            console.log("name IS null or undefined");
+        } else {
+            console.log("name is NOT null or undefined");
+        }
+
+        if (!myData.city) {
+            console.log("city IS null or undefined");
+        } else {
+            console.log("city is NOT null or undefined");
+        }
+    </script>
+</head>
+<body>
+    <p>
+        If you want to check to see whether a property is null or undefined (and you don’t care which), then you can simply
+        use an if statement and the negation operator (!)
+    </p>
+    <p>
+        This technique relies on the type coercion that JavaScript performs such that the values you are checking are
+        treated as boolean values. If a variable or property is null or undefined, then the coerced boolean value is false.
+    </p>
+</body>
+</html>

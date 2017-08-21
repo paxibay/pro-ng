@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Components</title>
+    @Styles.Render("~/Content/css")
+    <script>
+        // the childFN() is a closure object that consists of the child() function and 
+        // the environment variables that existed when the closure
+        // was created, including the message variable
+        function parent() {
+            var message = 'Hello World';
+            function child() {
+                alert(message);
+            }
+            return child;
+        }
+        var childFN = parent()
+      //childFN();
+
+        alert(typeof "sss");
+
+    </script>
+</head>
+<body ng-controller="defaultCtrl">
+    <div class="well">
+    </div>
+</body>
+</html>

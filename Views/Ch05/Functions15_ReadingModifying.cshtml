@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myData = {
+            name: "Adam",
+            weather: "sunny",
+        };
+
+        myData.name = "Joe";
+        myData["weather"] = "raining";
+
+        console.log("Hello " + myData.name + ".");
+        console.log("It is " + myData["weather"]);
+
+        console.log("---");
+
+        /*
+        In this style, you specify the name of the property you want between square braces ([ and ]). 
+        This can be a convenient way to access a property because you can pass the name of the property you are interested as a variable
+        This is the basis for how you enumerate the properties of an object
+        */
+        var propName = "weather";
+        myData[propName] = "raining";
+        console.log("It is " + myData[propName]);
+    </script>
+</head>
+<body>
+    <p>
+        The second style is an array-style index
+    </p>
+</body>
+</html>

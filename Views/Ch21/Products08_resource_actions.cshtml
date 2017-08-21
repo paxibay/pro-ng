@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Products</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/Scripts/Ch21/products08-resource-action.js"></script>
+    <script src="~/Scripts/Ch21/increment.js"></script>
+</head>
+<body ng-controller="defaultCtrl">
+    <div class="panel panel-primary">
+        <h3 class="panel-heading">Products</h3>
+        <ng-include src="'/Scripts/Ch21/_tableIncrementView.html'" ng-show="displayMode == 'list'"></ng-include>
+        <ng-include src="'/Scripts/Ch21/_editorView.html'" ng-show="displayMode == 'edit'"></ng-include>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myData = {
+            name: "Adam",
+            weather: "sunny",
+            printMessages: function () {
+                console.log("Hello " + this.name + ". ");
+                console.log("Today is " + this.weather + ".");
+            }
+        };
+
+        myData.printMessages();
+    </script>
+</head>
+<body>
+<p> One of the features that I like most about JavaScript is the way you can add functions to objects. A function defined on an object is called a method. </p>
+<p>	In this example, I have used a function to create a method called printMessages. Notice that to refer to the
+	properties defined by the object, I have to use the this keyword. When a function is used as a method, the function is
+	implicitly passed the object on which the method has been called as an argument through the special variable <em>this</em>.
+</p>
+</body>
+</html>

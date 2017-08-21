@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Exceptions</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script>
+        angular.module("exampleApp", [])
+        .controller("defaultCtrl", function ($scope, $exceptionHandler) {
+            $scope.throwEx = function () {
+                try {
+                    throw new Error("Triggered Exception");
+                } catch (ex) {
+                    $exceptionHandler(ex.message, "Button Click");
+                }
+            }
+        })
+        .factory("$exceptionHandler", function ($log) {
+            return function (exception, cause) {
+                $log.error("Message: " + exception.message + " (Cause: " + cause + ")");
+            }
+        });
+    </script>
+</head>
+<body ng-controller="defaultCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <button class="btn btn-primary" ng-click="throwEx()">Throw Exception</button>
+        </div>
+    </div>
+</body>
+</html>

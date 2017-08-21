@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myData = {
+            name: "Adam",
+        };
+
+        console.log("Var: " + myData.weather);
+        console.log("Prop: " + ("weather" in myData));
+
+        myData.weather = "sunny";
+        console.log("Var: " + myData.weather);
+        console.log("Prop: " + ("weather" in myData));
+
+        myData.weather = null;
+        console.log("Var: " + myData.weather);
+        console.log("Prop: " + ("weather" in myData));
+    </script>
+</head>
+<body>
+    <p>
+        JavaScript is unusual in that it also defines null, another special value. The null value is slightly different from
+        undefined. The undefined value is returned when no value is defined, and null is used when you want to indicate
+        that you have assigned a value but that value is not a valid object, string, number, or boolean; that is, you have
+        defined a value of no value.
+    </p>
+</body>
+</html>

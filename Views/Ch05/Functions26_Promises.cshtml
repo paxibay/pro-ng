@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html ng-app="demo">
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myApp = angular.module("demo", []);
+
+        myApp.controller("demoCtrl", function ($scope, $http) {
+            var promise = $http.get("todo.json");
+            promise.success(function (data) {
+                $scope.todos = data;
+            });
+        });
+    </script>
+</head>
+<body ng-controller="demoCtrl">
+    <div class="panel">
+        <h1>To Do</h1>
+        <table class="table">
+            <tr><td>Action</td><td>Done</td></tr>
+            <tr ng-repeat="item in todos">
+                <td>{{item.action}}</td>
+                <td>{{item.done}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <p>
+        Promises are the JavaScript way of representing an item of work that will be performed asynchronously and that will
+        be completed at some point in the future. The most common way to encounter promises is by making Ajax requests;
+        the browser makes the HTTP request behind the scenes and uses a promise to notify your application when the
+        request has completed.
+    </p>
+
+    <p>The success method is one of three that promise objects define</p>
+    <img src="~/Scripts/Ch05/PromiseObjectMethods.png" />
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Directives</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script>
+        angular.module("exampleApp", [])
+        .controller("defaultCtrl", function ($scope) {
+            $scope.todos = [
+                { action: "Get groceries", complete: false },
+                { action: "Call plumber", complete: false },
+                { action: "Buy running shoes", complete: true },
+                { action: "Buy flowers", complete: false },
+                { action: "Call family", complete: false }
+            ];
+
+            $scope.viewFile = function () {
+                return $scope.showList ? "@Url.Action("List", "Ch10")" : "@Url.Action("Table", "Ch10")";
+                // return $scope.showList ? "list.html" : "table.html";
+            };
+
+            $scope.reportChange = function () {
+                console.log("Displayed content: " + $scope.viewFile());
+            }
+        });
+    </script>
+</head>
+<body>
+    <div id="todoPanel" class="panel" ng-controller="defaultCtrl">
+        <h3 class="panel-header">To Do List</h3>
+        <div class="well">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="showList">
+                    Use the list view
+                </label>
+            </div>
+        </div>
+
+        <h3>ng-include Directive as an Element</h3>
+        <ng-include src="viewFile()" onload="reportChange()"></ng-include>
+        <h3>ng-include Directive as an Attribute</h3>
+        <div ng-include="viewFile()" onload="reportChange()"></div>
+    </div>
+</body>
+</html>

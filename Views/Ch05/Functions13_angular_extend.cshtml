@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myData = {
+            name: "Adam",
+            weather: "sunny",
+            printMessages: function () {
+                console.log("Hello " + this.name + ". ");
+                console.log("Today is " + this.weather + ".");
+            }
+        };
+
+        var myExtendedObject = {
+            city: "London"
+        };
+
+        angular.extend(myExtendedObject, myData);
+
+        console.log(myExtendedObject.name);
+        console.log(myExtendedObject.city);
+    </script>
+</head>
+<body>
+    <p> AngularJS makes it easy to copy methods and properties from one object to another through the angular.extend method</p>
+    <p>
+        In this example I create an object with a city property and assign it to the variable called myExtendedObject.
+        I then use the angular.extend method to copy all of the properties and functions from the myData object to myExtendedObject.
+    </p>
+    <p>
+        Tip The extend method preserves any properties and methods on the target object. If you want to create a copy of
+        an object without this preservation, then you can use the angular.copy method instead.
+    </p>
+</body>
+</html>

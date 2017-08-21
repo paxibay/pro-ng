@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/javascript">
+        var myData = {
+            name: "Adam",
+            weather: "sunny",
+            printMessages: function () {
+                console.log("Hello " + this.name + ". ");
+                console.log("Today is " + this.weather + ".");
+            }
+        };
+
+        for (var prop in myData) {
+            console.log("Name: " + prop + " Value: " + myData[prop]);
+        }
+
+        console.log("---");
+
+        angular.forEach(myData, function (value, key) {
+            console.log("Name: " + key + " Value: " + value);
+        });
+    </script>
+</head>
+<body>
+    <p>
+        You enumerate the properties that an object has using the for...in statement.
+    </p>
+    <p>
+        The for...in loop is a standard JavaScript feature and performs the statement in the code block for each
+        property in the myData object. The prop variable is assigned the name of the property being processed in each
+        iteration. I use an array-index style to retrieve the value of the property from the object.
+    </p>
+    <p>
+        AngularJS provides an alternative through the angular.forEach method, which takes the object and a function
+        that will be executed for each property. The function is passed the value of the current property and its name through
+        the value and key parameters. The result is the same as when using the for...in loop
+    </p>
+</body>
+</html>

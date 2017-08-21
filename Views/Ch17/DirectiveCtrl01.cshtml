@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Transclusion</title>
+    @Styles.Render("~/Content/css")
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script type="text/ng-template" id="productTemplate">
+        <td>{{item.name}}</td>
+        <td><input ng-model='item.quantity' /></td>
+    </script>
+    <script>
+        angular.module("exampleApp", [])
+        .controller("defaultCtrl", function ($scope) {
+            $scope.products = [
+                { name: "Apples", price: 1.20, quantity: 2 },
+                { name: "Bananas", price: 2.42, quantity: 3 },
+                { name: "Pears", price: 2.02, quantity: 1 }
+            ];
+        })
+        .directive("productItem", function () {
+            return {
+                template: document.querySelector("#productTemplate").outerText
+                //template: document.querySelector("#productTemplate").innerText 
+                //template: document.querySelector("#productTemplate").innerHTML
+                //templateUrl: 'productTemplate'
+            }
+        })
+        .directive("productTable", function () {
+            return {
+                transclude: true,
+                scope: { value: "=productTable", data: "=productData" }
+            }
+        });
+    </script>
+</head>
+<body ng-controller="defaultCtrl">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <table class="table table-striped" product-table="totalValue" product-data="products" ng-transclude>
+                <tr><th>Name</th><th>Quantity</th></tr>
+                <tr ng-repeat="item in products" product-item></tr>
+                <tr><th>Total:</th><td>{{totalValue}}</td></tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

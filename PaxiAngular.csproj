@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6630FA30-9B9A-481B-B4DD-5842C8B30226}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CH09_The_Anatomy_of_an_AngularJS_App</RootNamespace>
+    <AssemblyName>CH09 The Anatomy of an AngularJS App</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TypeScriptToolsVersion>2.1</TypeScriptToolsVersion>
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.AspNet.Identity.Core.2.2.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.AspNet.Identity.EntityFramework.2.2.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.AspNet.Identity.Owin.2.2.0\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Owin.Security.Cookies.3.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Facebook, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Owin.Security.Facebook.3.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Owin.Security.Google.3.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Owin.Security.MicrosoftAccount.3.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Owin.Security.OAuth.3.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.Owin.Security.Twitter.3.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\lib\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\..\lib\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Owin">
+      <HintPath>..\..\lib\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Ch05Controller.cs" />
+    <Compile Include="Controllers\Ch09Controller.cs" />
+    <Compile Include="Controllers\Ch10Controller.cs" />
+    <Compile Include="Controllers\Ch11Controller.cs" />
+    <Compile Include="Controllers\Ch12Controller.cs" />
+    <Compile Include="Controllers\Ch13Controller.cs" />
+    <Compile Include="Controllers\Ch14Controller.cs" />
+    <Compile Include="Controllers\Ch15Controller.cs" />
+    <Compile Include="Controllers\Ch16Controller.cs" />
+    <Compile Include="Controllers\Ch17Controller.cs" />
+    <Compile Include="Controllers\Ch18Controller.cs" />
+    <Compile Include="Controllers\Ch19Controller.cs" />
+    <Compile Include="Controllers\Ch20Controller.cs" />
+    <Compile Include="Controllers\Ch21Controller.cs" />
+    <Compile Include="Controllers\Ch22Controller.cs" />
+    <Compile Include="Controllers\Ch23Controller.cs" />
+    <Compile Include="Controllers\Ch24Controller.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OtherController.cs" />
+    <Compile Include="Controllers\RoutesDemoController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\angular-animate.js" />
+    <Content Include="App_Data\angular-cookies.js" />
+    <Content Include="App_Data\angular-mocks.js" />
+    <Content Include="App_Data\angular-resource.js" />
+    <Content Include="App_Data\angular-route.js" />
+    <Content Include="App_Data\angular-sanitize.js" />
+    <Content Include="App_Data\angular-touch.js" />
+    <Content Include="App_Data\angular.js" />
+    <Content Include="App_Data\angular.min.js" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Other\aa.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-animate.js" />
+    <Content Include="Scripts\angular-animate.min.js" />
+    <Content Include="Scripts\angular-cookies.js" />
+    <Content Include="Scripts\angular-cookies.min.js" />
+    <Content Include="Scripts\angular-csp.css" />
+    <Content Include="Scripts\angular-loader.js" />
+    <Content Include="Scripts\angular-loader.min.js" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-resource.js" />
+    <Content Include="Scripts\angular-resource.min.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular-sanitize.js" />
+    <Content Include="Scripts\angular-sanitize.min.js" />
+    <Content Include="Scripts\angular-scenario.js" />
+    <Content Include="Scripts\angular-touch.js" />
+    <Content Include="Scripts\angular-touch.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\AwesomeAngularMVCApp.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\Ch05\ArrayMethods.png" />
+    <Content Include="Scripts\Ch05\NumberToString.png" />
+    <Content Include="Scripts\Ch05\PromiseObjectMethods.png" />
+    <Content Include="Scripts\Ch05\StringToNumber.png" />
+    <Content Include="Scripts\Ch09\controller.js" />
+    <Content Include="Scripts\Ch09\filters.js" />
+    <Content Include="Scripts\Ch13\controllers2.js" />
+    <Content Include="Scripts\Ch13\controllers.js" />
+    <Content Include="Scripts\Ch14\customFilters.js" />
+    <Content Include="Scripts\Ch18\directive02_singlemodule.js" />
+    <Content Include="Scripts\Ch18\directive03_multimodule.js" />
+    <Content Include="Scripts\Ch18\factory01-service.js" />
+    <Content Include="Scripts\Ch18\provider02-directive.js" />
+    <Content Include="Scripts\Ch18\provider01-directive.js" />
+    <Content Include="Scripts\Ch18\provider01-service.js" />
+    <Content Include="Scripts\Ch18\service02-directive.js" />
+    <Content Include="Scripts\Ch18\service01-directive.js" />
+    <Content Include="Scripts\Ch18\factory02-directive.js" />
+    <Content Include="Scripts\Ch18\factory01-directive.js" />
+    <Content Include="Scripts\Ch18\factory02-service.js" />
+    <Content Include="Scripts\Ch19\services.min.js">
+      <DependentUpon>services.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Ch20\test.html" />
+    <Content Include="Scripts\Ch20\ajax.html" />
+    <Content Include="Scripts\Ch20\productData.json" />
+    <Content Include="Scripts\Ch05\todo.json" />
+    <Content Include="Scripts\Ch21\Note.txt" />
+    <Content Include="Scripts\Ch21\products06-resource.js" />
+    <Content Include="Scripts\Ch21\products08-resource-action.js" />
+    <Content Include="Scripts\Ch21\_editorView.html" />
+    <Content Include="Scripts\Ch21\_tableIncrementView.html" />
+    <Content Include="Scripts\Ch21\_tableComponentView.html" />
+    <Content Include="Scripts\Ch22\products01-ngview.js" />
+    <Content Include="Scripts\Ch22\products00-initial.js" />
+    <Content Include="Scripts\Ch22\_tableView-initial.html" />
+    <Content Include="Scripts\Ch22\_editorView_initial.html" />
+    <Content Include="Scripts\Ch22\_tableView_dependency.html" />
+    <Content Include="Scripts\Ch22\_tableView_routeParameters.html" />
+    <Content Include="Scripts\angular-animate.min.js.map" />
+    <Content Include="Scripts\angular-cookies.min.js.map" />
+    <Content Include="Scripts\angular-loader.min.js.map" />
+    <Content Include="Scripts\angular-resource.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
+    <Content Include="Scripts\angular-sanitize.min.js.map" />
+    <Content Include="Scripts\angular-touch.min.js.map" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\Ch19\services.min.js.map">
+      <DependentUpon>services.min.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\Ch20\productData1.json" />
+    <None Include="Scripts\jquery-2.1.3.intellisense.js" />
+    <Content Include="Scripts\Ch18\provider02-service.js" />
+    <Content Include="Scripts\Ch18\service02-service.js" />
+    <Content Include="Scripts\Ch18\service01-service.js" />
+    <Content Include="Scripts\Ch19\services.js" />
+    <Content Include="Scripts\Ch20\productData.xml" />
+    <Content Include="Scripts\Ch20\services.js" />
+    <Content Include="Scripts\Ch21\increment-component.js" />
+    <Content Include="Scripts\Ch21\increment.js" />
+    <Content Include="Scripts\Ch21\products07-resource-promise.js" />
+    <Content Include="Scripts\Ch21\products05-increment.js" />
+    <Content Include="Scripts\Ch21\products04-rest-update.js" />
+    <Content Include="Scripts\Ch21\products03-rest-create.js" />
+    <Content Include="Scripts\Ch21\products02-rest-delete.js" />
+    <Content Include="Scripts\Ch21\products01-rest-list.js" />
+    <Content Include="Scripts\Ch21\products00-initial.js" />
+    <Content Include="Scripts\Ch21\_tableView.html" />
+    <Content Include="Scripts\Ch22\increment.js" />
+    <Content Include="Scripts\Ch22\products04-dependencies.js" />
+    <Content Include="Scripts\Ch22\products03-controller.js" />
+    <Content Include="Scripts\Ch22\products02-parameters.js" />
+    <Content Include="Scripts\Ch22\products-base.js" />
+    <Content Include="Scripts\Ch23\increment.js" />
+    <Content Include="Scripts\Ch23\products.js" />
+    <Content Include="Scripts\Ch23\_editorView.html" />
+    <Content Include="Scripts\Ch23\_tableView.html" />
+    <Content Include="Scripts\Controllers\LandingPageController.js" />
+    <Content Include="Scripts\Controllers\LoginController.js" />
+    <Content Include="Scripts\Controllers\RegisterController.js" />
+    <Content Include="Scripts\Factories\AuthHttpResponseInterceptor.js" />
+    <Content Include="Scripts\Factories\LoginFactory.js" />
+    <Content Include="Scripts\Factories\RegistrationFactory.js" />
+    <Content Include="Scripts\jquery-2.1.3.js" />
+    <Content Include="Scripts\jquery-2.1.3.min.js" />
+    <Content Include="Scripts\npm.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Ch16\tableTemplateWithoutRepeat.html" />
+    <Content Include="Views\Ch16\tableTemplateWithRepeat.html" />
+    <Content Include="Views\Ch16\itemTemplate.html" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Ch09\Directive.cshtml" />
+    <Content Include="Views\Ch09\Filters.cshtml" />
+    <Content Include="Views\Ch09\Services.cshtml" />
+    <Content Include="Views\Ch09\Organize.cshtml" />
+    <Content Include="Views\Ch09\LifeCycle.cshtml" />
+    <Content Include="Views\Ch10\Index.cshtml" />
+    <Content Include="Views\Ch10\Initial.cshtml" />
+    <Content Include="Views\Ch10\OneWay.cshtml" />
+    <Content Include="Views\Ch10\TwoWay.cshtml" />
+    <Content Include="Views\Ch10\Repeat.cshtml" />
+    <Content Include="Views\Ch10\RepeatNested.cshtml" />
+    <Content Include="Views\Ch10\RepeatNestedWithKey.cshtml" />
+    <Content Include="Views\Ch10\RepeatNestedIndex.cshtml" />
+    <Content Include="Views\Ch10\RepeatVariables.cshtml" />
+    <Content Include="Views\Ch10\RepeatStartAndEnd.cshtml" />
+    <Content Include="Views\Ch10\Include.cshtml" />
+    <Content Include="Views\Ch10\Table.cshtml" />
+    <Content Include="Views\Ch10\List.cshtml" />
+    <Content Include="Views\Ch10\IncludeDynamic.cshtml" />
+    <Content Include="Views\Ch10\IncludeAttribute.cshtml" />
+    <Content Include="Views\Ch10\Switch.cshtml" />
+    <Content Include="Views\Ch10\Cloak.cshtml" />
+    <Content Include="Views\Ch11\Initial.cshtml" />
+    <Content Include="Views\Ch11\ElementVisibility.cshtml" />
+    <Content Include="Views\Ch11\Managing.cshtml" />
+    <Content Include="Views\Ch11\HandlingEvents.cshtml" />
+    <Content Include="Views\Ch11\CustomEvent.cshtml" />
+    <Content Include="Views\Ch11\BooleanAttribute.cshtml" />
+    <Content Include="Views\Ch12\Index.cshtml" />
+    <Content Include="Views\Ch12\ImplicitlyModel.cshtml" />
+    <Content Include="Views\Ch12\CheckingModel.cshtml" />
+    <Content Include="Views\Ch12\FormValidation.cshtml" />
+    <Content Include="Views\Ch12\Feedback.cshtml" />
+    <Content Include="Views\Ch12\SpecialVariables.cshtml" />
+    <Content Include="Views\Ch12\DeferringValidation.cshtml" />
+    <Content Include="Views\Ch12\FormDirectiveAttributes.cshtml" />
+    <Content Include="Views\Ch12\UsingCheckboxes.cshtml" />
+    <Content Include="Views\Ch12\TextAreas.cshtml" />
+    <Content Include="Views\Ch12\SelectElements.cshtml" />
+    <Content Include="Views\Ch12\OptgroupElements.cshtml" />
+    <Content Include="Views\Ch13\Index.cshtml" />
+    <Content Include="Views\Ch13\SimpleController.cshtml" />
+    <Content Include="Views\Ch13\SettingScope.cshtml" />
+    <Content Include="Views\Ch13\ModifyingScope.cshtml" />
+    <Content Include="Views\Ch13\MonolithicController.cshtml" />
+    <Content Include="Views\Ch13\ReusingController.cshtml" />
+    <Content Include="Views\Ch13\CommunicatingByRootScopes.cshtml" />
+    <Content Include="Views\Ch13\CommunicatingByMediateScopes.cshtml" />
+    <Content Include="Views\Ch13\CommunicatingByInheritance.cshtml" />
+    <Content Include="Views\Ch13\CommunicatingByDataInheritance.cshtml" />
+    <Content Include="Views\Ch13\MultipleControllers.cshtml" />
+    <Content Include="Views\Ch13\ScopeLessControllers.cshtml" />
+    <Content Include="Views\Ch13\ExplicitlyUpdatingScope.cshtml" />
+    <Content Include="Views\Ch14\Filter00_Base.cshtml" />
+    <Content Include="Views\Ch14\Filter02_SingleDates.cshtml" />
+    <Content Include="Views\Ch14\Filter01_SingleCurrency.cshtml" />
+    <Content Include="Views\Ch14\Filter04_SingleJSON.cshtml" />
+    <Content Include="Views\Ch14\Filter05_SingleLocalizing.cshtml" />
+    <Content Include="Views\Ch14\Filter06_Collections_LimitTo.cshtml" />
+    <Content Include="Views\Ch14\Filter07_Collections_Selecting_MapObject.cshtml" />
+    <Content Include="Views\Ch14\Filter08_Collections_Selecting_Function.cshtml" />
+    <Content Include="Views\Ch14\Filter09_Collections_Sorting.cshtml" />
+    <Content Include="Views\Ch14\Filter10_Custom.cshtml" />
+    <Content Include="Views\Ch15\Index.cshtml" />
+    <Content Include="Views\Ch15\CustomDirective00_.cshtml" />
+    <Content Include="Views\Ch15\CustomDirective01_NewElements.cshtml" />
+    <Content Include="Views\Ch15\CustomDirective02_Attribute.cshtml" />
+    <Content Include="Views\Ch15\CustomDirective03_Expressions.cshtml" />
+    <Content Include="Views\Ch15\CustomDirective04_DataChanges.cshtml" />
+    <Content Include="Views\Ch15\jqLite01_Navigating_eqMethod.cshtml" />
+    <Content Include="Views\Ch15\jqLite02_Navigating_findMethod.cshtml" />
+    <Content Include="Views\Ch15\jqLite03_Modifying_Get.cshtml" />
+    <Content Include="Views\Ch15\jqLite04_Modifying_Set.cshtml" />
+    <Content Include="Views\Ch15\jqLite05_Creating_Wrong.cshtml" />
+    <Content Include="Views\Ch15\jqLite07_HandleEvent.cshtml" />
+    <Content Include="Views\Ch15\jqLite08_ReplacdByjQuery.cshtml" />
+    <Content Include="Scripts\jquery-2.1.3.min.map" />
+    <Content Include="Views\Ch16\Index.cshtml" />
+    <Content Include="Views\Ch16\Directive01_Element.cshtml" />
+    <Content Include="Views\Ch16\Template01_Initial.cshtml" />
+    <Content Include="Views\Ch16\Template02_Function.cshtml" />
+    <Content Include="Views\Ch16\Template03_ExternalFile.cshtml" />
+    <Content Include="Views\Ch16\Template04_ExternalFunction.cshtml" />
+    <Content Include="Views\Ch16\Template05_Replacing_00.cshtml" />
+    <Content Include="Views\Ch16\DirectiveScopes01_OneScope.cshtml" />
+    <Content Include="Views\Ch16\DirectiveScopes02_MultipleScopes.cshtml" />
+    <Content Include="Views\Ch16\DirectiveScopes03_SetScopeProp.cshtml" />
+    <Content Include="Views\Ch16\DirectiveScopes04_ExpandingScopes.cshtml" />
+    <Content Include="Views\Ch16\IsolatedScope01_Base.cshtml" />
+    <Content Include="Views\Ch16\IsolatedScope02_OneWay.cshtml" />
+    <Content Include="Views\Ch16\IsolatedScope03_OneWayReusing.cshtml" />
+    <Content Include="Views\Ch16\IsolatedScope04_TwoWay.cshtml" />
+    <Content Include="Views\Ch16\IsolatedScope05_Expressions.cshtml" />
+    <Content Include="Views\Ch16\IsolatedScope06_ScopeData.cshtml" />
+    <Content Include="Views\Ch17\Transclusion01_ScopeTrue.cshtml" />
+    <Content Include="Views\Ch17\CompileFunc03.cshtml" />
+    <Content Include="Views\Ch17\DirectiveCtrl01.cshtml" />
+    <Content Include="Views\Ch17\DirectiveCtrl02.cshtml" />
+    <Content Include="Views\Ch17\DirectiveCtrl03.cshtml" />
+    <Content Include="Views\Ch17\CustomForms00_Base.cshtml" />
+    <Content Include="Views\Ch17\CustomForms01_ExternalChanges.cshtml" />
+    <Content Include="Views\Ch17\CustomForms02_InternalChanges.cshtml" />
+    <Content Include="Views\Ch17\CustomForms03_FormattingDataValue.cshtml" />
+    <Content Include="Views\Ch17\CustomForms04_Validating.cshtml" />
+    <Content Include="Views\Ch18\Directive01_Embedding.cshtml" />
+    <Content Include="Views\Ch18\Directive02_SingleModule.cshtml" />
+    <Content Include="Views\Ch18\Directive03_MultiModule.cshtml" />
+    <Content Include="Views\Ch18\Service01_Factory.cshtml" />
+    <Content Include="Views\Ch18\Service02_Factory.cshtml" />
+    <Content Include="Views\Ch18\Service03_Service.cshtml" />
+    <Content Include="Views\Ch18\Service04_Service.cshtml" />
+    <Content Include="Views\Ch18\Service05_Provider.cshtml" />
+    <Content Include="Views\Ch18\Service06_Provider.cshtml" />
+    <Content Include="Views\Ch19\DomApi01_Window.cshtml" />
+    <Content Include="Views\Ch19\DomApi02_Document.cshtml" />
+    <Content Include="Views\Ch19\DomApi03_interval.cshtml" />
+    <Content Include="Views\Ch19\DomApi04_location.cshtml" />
+    <Content Include="Views\Ch19\DomApi05_location_HTML5.cshtml" />
+    <Content Include="Views\Ch19\DomApi06_Scroll.cshtml" />
+    <Content Include="Views\Ch19\DomApi07_ManualScroll.cshtml" />
+    <Content Include="Views\Ch19\DomApi08_logService.cshtml" />
+    <Content Include="Views\Ch19\Exceptions01_Initial.cshtml" />
+    <Content Include="Views\Ch19\Exceptions02_exceptionHandler.cshtml" />
+    <Content Include="Views\Ch19\Exceptions03_errorHandler.cshtml" />
+    <Content Include="Views\Ch19\DangerousData01_htmlData.cshtml" />
+    <Content Include="Views\Ch19\DangerousData02_ngSanitize.cshtml" />
+    <Content Include="Views\Ch19\DangerousData03_sanitizeService.cshtml" />
+    <Content Include="Views\Ch19\DangerousData04_sceService.cshtml" />
+    <Content Include="Views\Ch19\Expressions01_parse.cshtml" />
+    <Content Include="Views\Ch19\Expressions02_parseLocal.cshtml" />
+    <Content Include="Views\Ch19\Expressions03_interpolate.cshtml" />
+    <Content Include="Views\Ch19\Expressions04_interpolateConfiguring.cshtml" />
+    <Content Include="Views\Ch19\Expressions05_Compiling.cshtml" />
+    <Content Include="Views\Ch20\Ajax00_.cshtml" />
+    <Content Include="Views\Ch20\Ajax01_httpGet.cshtml" />
+    <Content Include="Views\Ch20\Ajax02_promiseThen.cshtml" />
+    <Content Include="Views\Ch20\Ajax03_xml.cshtml" />
+    <Content Include="Views\Ch20\Ajax04_TransformResponse.cshtml" />
+    <Content Include="Views\Ch20\Ajax05_TransformRequest.cshtml" />
+    <Content Include="Views\Ch20\Ajax06_AjaxDefaults.cshtml" />
+    <Content Include="Views\Ch20\Ajax07_Interceptors.cshtml" />
+    <Content Include="Views\Ch20\Promises00_.cshtml" />
+    <Content Include="Views\Ch20\Promises01_deferred.cshtml" />
+    <Content Include="Views\Ch20\Promises02_Consuming.cshtml" />
+    <Content Include="Views\Ch20\Promises03_Chaining.cshtml" />
+    <Content Include="Views\Ch20\Promises04_GroupingPromises.cshtml" />
+    <Content Include="Views\Ch21\Products00_initial.cshtml" />
+    <Content Include="Views\Ch21\_tableView.cshtml" />
+    <Content Include="Views\Ch21\Products05_increment.cshtml" />
+    <Content Include="Views\Ch21\Products06_resource.cshtml" />
+    <Content Include="Views\Ch22\Products00_base.cshtml" />
+    <Content Include="Views\Ch22\Products01_ngview.cshtml" />
+    <Content Include="Views\Ch22\Products02_RoutParameters.cshtml" />
+    <Content Include="Views\Ch22\Products03_Controllers.cshtml" />
+    <Content Include="Views\Ch23\Products01_Animation.cshtml" />
+    <Content Include="Views\Ch23\Products03_Touch.cshtml" />
+    <Content Include="Views\Ch24\Components01_decorator.cshtml" />
+    <Content Include="Views\Ch24\Components02_injector.cshtml" />
+    <Content Include="Views\Ch24\Components03_injectorhas.cshtml" />
+    <Content Include="Views\Ch24\Components04_injectorget.cshtml" />
+    <Content Include="Views\Ch24\Components05_injectorinvoke.cshtml" />
+    <Content Include="Views\Ch24\Components06_rootElement.cshtml" />
+    <Content Include="Views\Ch05\Initial.cshtml" />
+    <Content Include="Views\Ch05\Functions01.cshtml" />
+    <Content Include="Views\Ch05\Functions02_Parameters.cshtml" />
+    <Content Include="Views\Ch05\Functions03_ReturnResults.cshtml" />
+    <Content Include="Views\Ch05\Functions04_DetectingFunctions.cshtml" />
+    <Content Include="Views\Ch05\Functions05_Variables.cshtml" />
+    <Content Include="Views\Ch05\Functions06_primitive_boolean.cshtml" />
+    <Content Include="Views\Ch05\Functions07_primitive_string.cshtml" />
+    <Content Include="Views\Ch05\Functions09_AngularJS_string.cshtml" />
+    <Content Include="Views\Ch05\Functions08_primitive_number.cshtml" />
+    <Content Include="Views\Ch05\Functions10_object.cshtml" />
+    <Content Include="Views\Ch05\Functions11_object_literal.cshtml" />
+    <Content Include="Views\Ch05\Functions12_function.cshtml" />
+    <Content Include="Views\Ch05\Functions13_angular_extend.cshtml" />
+    <Content Include="Views\Ch05\Functions14_angular_isObject.cshtml" />
+    <Content Include="Views\Ch05\Functions15_ReadingModifying.cshtml" />
+    <Content Include="Views\Ch05\Functions16_Enumerating.cshtml" />
+    <Content Include="Views\Ch05\Functions17_Adding.cshtml" />
+    <Content Include="Views\Ch05\Functions18_Deleting.cshtml" />
+    <Content Include="Views\Ch05\Functions20_Determining.cshtml" />
+    <Content Include="Views\Ch05\Functions21_conditional.cshtml" />
+    <Content Include="Views\Ch05\Functions22_Equality.cshtml" />
+    <Content Include="Views\Ch05\Functions22_identity.cshtml" />
+    <Content Include="Views\Ch05\Functions23_compared.cshtml" />
+    <Content Include="Views\Ch05\Functions23_compared2.cshtml" />
+    <Content Include="Views\Ch05\Functions23_compared3.cshtml" />
+    <Content Include="Views\Ch05\Functions24_Converting.cshtml" />
+    <Content Include="Views\Ch05\Functions24_ConvertNumbers.cshtml" />
+    <Content Include="Views\Ch05\Functions24_ConvertString.cshtml" />
+    <Content Include="Views\Ch05\Functions25_Arrays.cshtml" />
+    <Content Include="Views\Ch05\Functions25_ArrayLiteral.cshtml" />
+    <Content Include="Views\Ch05\Functions25_ArrayDetecting.cshtml" />
+    <Content Include="Views\Ch05\Functions25_ArrayReadingModifying.cshtml" />
+    <Content Include="Views\Ch05\Functions25_ArrayEnumerating.cshtml" />
+    <Content Include="Views\Ch05\Functions25_Array_undefined.cshtml" />
+    <Content Include="Views\Ch05\Functions25_Array_null.cshtml" />
+    <Content Include="Views\Ch05\Functions25_Array_Checking.cshtml" />
+    <Content Include="Views\Ch05\Functions25_Array_Checkingangular.cshtml" />
+    <Content Include="Views\Ch05\Functions26_Promises.cshtml" />
+    <Content Include="Views\Ch05\Functions26_Promiseschaining.cshtml" />
+    <Content Include="Views\Ch05\Functions27_JSON.cshtml" />
+    <Content Include="Views\Other\AngularService.cshtml" />
+    <Content Include="Views\Ch15\jqLite06_Creating_Correct.cshtml" />
+    <Content Include="Views\Ch16\Directive02_Attribute.cshtml" />
+    <Content Include="Views\Ch16\Directive03_Class.cshtml" />
+    <Content Include="Views\Ch16\Template06_Replacing_01.cshtml" />
+    <Content Include="Views\Ch16\Template06_Replacing_02.cshtml" />
+    <Content Include="Views\Ch17\Transclusion02_ScopeFalse.cshtml" />
+    <Content Include="Views\Ch17\CustomForms05_ValidatingExplicitly.cshtml" />
+    <Content Include="Views\Ch14\Filter03_SingleString.cshtml" />
+    <Content Include="Views\Other\aa.cshtml" />
+    <Content Include="Views\Other\Sidebar01.cshtml" />
+    <Content Include="Views\Ch21\Products01_rest_list.cshtml" />
+    <Content Include="Views\Ch21\Products02_rest_delete.cshtml" />
+    <Content Include="Views\Ch21\Products03_rest_create.cshtml" />
+    <Content Include="Views\Ch21\Products04_rest_update.cshtml" />
+    <Content Include="Views\Ch21\Products07_resource_promise.cshtml" />
+    <Content Include="Views\Ch21\Products08_resource_actions.cshtml" />
+    <Content Include="Views\Ch21\Products09_resource_component.cshtml" />
+    <Content Include="Views\Other\ClosureObject.cshtml" />
+    <Content Include="Views\Home\One.cshtml" />
+    <Content Include="Views\RoutesDemo\One.cshtml" />
+    <Content Include="Views\RoutesDemo\Three.cshtml" />
+    <Content Include="Views\RoutesDemo\Two.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Ch22\Products04_Dependency.cshtml" />
+    <Content Include="Views\Ch23\Products02_ParallelAnimation.cshtml" />
+    <Content Include="Views\Ch05\todo.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts\Ch24\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Views\Ch09\Index.cshtml" />
+    <Content Include="Views\Ch09\MultiCtrl.cshtml" />
+    <Content Include="Views\Ch09\FluentApi.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2773</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2773/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

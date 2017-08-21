@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>AngularJS Demo</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script>
+        var myApp = angular.module("exampleApp", []);
+
+        myApp.controller("dayCtrl", function ($scope) {
+            var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+            $scope.day = dayNames[new Date().getDay()];
+            $scope.tomorrow = dayNames[(new Date().getDay() + 1) % 7];
+        });
+
+        //=======================================================================
+        function Person(name) {
+            // define a variable only accessible inside of the Person constructor
+            var age = 25;
+            this.name = name;
+
+            this.getAge = function() {
+                return age;
+            };
+            this.growOlder = function () {
+                age++;
+            };
+        }
+
+        var person = new Person("Nicholas");
+        console.log(person.name); // "Nicholas"
+        console.log(person.getAge()); // 25
+        person.age = 100;
+        console.log("person age");
+        console.log(person.age);
+        console.log("person age");
+        console.log(person.getAge()); // 25
+        person.growOlder();
+        console.log(person.getAge()); // 26
+        //=======================================================================
+
+    </script>
+
+</head>
+<body>
+    <div class="panel" ng-controller="dayCtrl">
+        <div class="page-header">
+            <h3>AngularJS App</h3>
+        </div>
+        <h4 ng-controller="dayCtrl">Today is {{day || "(unknown)"}}</h4>
+        <h4 ng-controller="dayCtrl">Tomorrow is {{tomorrow || "(unknown)"}}</h4>
+    </div>
+</body>
+</html>

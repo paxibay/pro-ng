@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+<head>
+    <title>Products</title>
+    @Styles.Render("~/Content/css")
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-resource.js"></script>
+    <script src="~/Scripts/angular-route.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+    <script src="~/Scripts/Ch23/products.js"></script>
+    <script src="~/Scripts/Ch23/increment.js"></script>
+    <style type="text/css">
+        .ngFade.ng-enter { transition: 0.1s linear all; opacity: 0; }
+        .ngFade.ng-enter-active { opacity: 1; }
+        .ngFade.ng-leave { transition: 0.1s linear all; opacity: 1; }
+        .ngFade.ng-leave-active { opacity: 0; }
+    </style>
+</head>
+<body ng-controller="defaultCtrl">
+    <div class="panel panel-primary">
+        <h3 class="panel-heading">Products</h3>
+        <div ng-view class="ngFade"></div>
+    </div>
+</body>
+</html>

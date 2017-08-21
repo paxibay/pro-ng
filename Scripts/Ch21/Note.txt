@@ -1,0 +1,9 @@
+﻿E:\deployd
+dpd -p 5500 products\app.dpd
+dashboard
+
+or  
+
+E:\deployd
+dpd -p 2403 products\app.dpd
+dashboard
